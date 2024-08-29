@@ -87,6 +87,11 @@ get_download_url() {
       ;;
     arm64 | aarch64)
       arch="aarch64"
+      case $platform in
+        unknown-linux-gnu)
+          platform="unknown-linux-musl"
+          ;;
+      esac
       ;;
     arm)
       arch="arm"
